@@ -1,5 +1,5 @@
-Lister Name,Property Name,Location,Lot Area (sqm),Floor Area (sqm),Bedrooms,Bathrooms,Property Type,Price (PHP),Image Path,Link,Response
-Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80,261,4,5,House,"17,000,000","Kamuning.jpg, Kamuning1.jpg",https://www.lamudi.com.ph/buy/metro-manila/quezon-city/4-storey-townhouse-for-sale-in-kamuning-quezon-cit-173227085988/,"Broker Profile: Jeffrey Lock
+listing_id,listing_name,property_name,location,lot_area,floor_area,bedrooms,bathrooms,property_type,price,image_path,response
+1,Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80,261,4,5,House,"17,000,000","[""Kamuning.jpg"", ""Kamuning1.jpg""]","Broker Profile: Jeffrey Lock
 Number of Listings Found Online:
 1 verified listing (e.g., 4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY)
 
@@ -20,7 +20,7 @@ Floor Area: 261 sqm
 Price: PHP 17,000,000
 Image Path: /images/kamuning.jpg
 Link to Listing: View Property"
-Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400,882,7,7,House,"100,000,000","Hillsborough.jpg, Hillsborough1.jpg",https://www.lamudi.com.ph/projects/hillsborough/for-sale-3-storey-brand-new-house-hillsborough-ala-173225526498/,"Broker Profile: Top Tier
+2,Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400,882,7,7,House,"100,000,000","[""Hillsborough.jpg"", ""Hillsborough1.jpg""]","Broker Profile: Top Tier
 Number of Listings Found Online:
 1 verified listing (e.g., FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntinlupa)
 
