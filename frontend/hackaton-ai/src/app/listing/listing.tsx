@@ -1,42 +1,80 @@
 'use client';
 
 import { useState } from 'react';
+import axios from 'axios'; // Import axios
+import { useRouter } from 'next/navigation';
+
+interface Property {
+  listing_id: number;
+  property_name: string;
+  price: number;
+  location: string;
+  bedrooms: number;
+  bathrooms: number;
+  floor_area: number;
+  lot_area: number;
+  property_type: string;
+  image_path: string[];
+  response?: string;
+  lister_name: string;
+}
 
 export default function ListingPage() {
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    price: '',
+  const [formData, setFormData] = useState<Property>({
+    listing_id: 0, // Assuming a default value, adjust as needed
+    property_name: '',
+    price: 0,
     location: '',
-    bedrooms: '',
-    bathrooms: '',
-    lotArea: '',
-    floorArea: '',
-    propertyType: 'house',
-    amenities: [] as string[],
-    images: [] as File[]
+    bedrooms: 0,
+    bathrooms: 0,
+    floor_area: 0,
+    lot_area: 0,
+    property_type: 'house',
+    image_path: [],
+    lister_name: '',
   });
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement API call to save listing
-    console.log('Form submitted:', formData);
+    try {
+      console.log(formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`+'/add_property', formData);
+      console.log('Form submitted successfully:', response.data);
+      // if (response.status == 201){
+      //   router.push('/');
+      // }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: name === 'price' || name === 'bedrooms' || name === 'bathrooms' || name === 'floor_area' || name === 'lot_area' 
+        ? Number(value) 
+        : value
     }));
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      const newImages = Array.from(e.target.files);
+      const newImages = Array.from(e.target.files).map(file => {
+        const filePath = `/images/${file.name}`;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const base64Image = reader.result as string;
+          // Here you can save the base64 string to local storage or handle it as needed
+        };
+        reader.readAsDataURL(file);
+        console.log(`Saving file to: ${filePath}`);
+        return filePath;
+      });
       setFormData(prev => ({
         ...prev,
-        images: [...prev.images, ...newImages]
+        image_path: [...prev.image_path, ...newImages]
       }));
     }
   };
@@ -44,7 +82,7 @@ export default function ListingPage() {
   const removeImage = (index: number) => {
     setFormData(prev => ({
       ...prev,
-      images: prev.images.filter((_, i) => i !== index)
+      image_path: prev.image_path.filter((_, i) => i !== index)
     }));
   };
 
@@ -59,11 +97,11 @@ export default function ListingPage() {
             
             <form onSubmit={handleSubmit} className="space-y-6 bg-base-100 p-6 rounded-xl shadow-xl">
               <div>
-                <label className="block text-sm font-medium mb-2">Property Title</label>
+                <label className="block text-sm font-medium mb-2">Property Name</label>
                 <input
                   type="text"
-                  name="title"
-                  value={formData.title}
+                  name="property_name"
+                  value={formData.property_name}
                   onChange={handleChange}
                   className="input input-bordered w-full"
                   required
@@ -71,12 +109,13 @@ export default function ListingPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Description</label>
-                <textarea
-                  name="description"
-                  value={formData.description}
+                <label className="block text-sm font-medium mb-2">Lister Name</label>
+                <input
+                  type="text"
+                  name="lister_name"
+                  value={formData.lister_name}
                   onChange={handleChange}
-                  className="textarea textarea-bordered w-full h-32"
+                  className="input input-bordered w-full"
                   required
                 />
               </div>
@@ -116,7 +155,6 @@ export default function ListingPage() {
                     value={formData.bedrooms}
                     onChange={handleChange}
                     className="input input-bordered w-full"
-                    required
                   />
                 </div>
 
@@ -128,7 +166,6 @@ export default function ListingPage() {
                     value={formData.bathrooms}
                     onChange={handleChange}
                     className="input input-bordered w-full"
-                    required
                   />
                 </div>
 
@@ -136,11 +173,10 @@ export default function ListingPage() {
                   <label className="block text-sm font-medium mb-2">Lot Area (m²)</label>
                   <input
                     type="number"
-                    name="lotArea"
-                    value={formData.lotArea}
+                    name="lot_area"
+                    value={formData.lot_area}
                     onChange={handleChange}
                     className="input input-bordered w-full"
-                    required
                   />
                 </div>
 
@@ -148,11 +184,10 @@ export default function ListingPage() {
                   <label className="block text-sm font-medium mb-2">Floor Area (m²)</label>
                   <input
                     type="number"
-                    name="floorArea"
-                    value={formData.floorArea}
+                    name="floor_area"
+                    value={formData.floor_area}
                     onChange={handleChange}
                     className="input input-bordered w-full"
-                    required
                   />
                 </div>
               </div>
@@ -160,15 +195,15 @@ export default function ListingPage() {
               <div>
                 <label className="block text-sm font-medium mb-2">Property Type</label>
                 <select
-                  name="propertyType"
-                  value={formData.propertyType}
+                  name="property_type"
+                  value={formData.property_type}
                   onChange={handleChange}
                   className="select select-bordered w-full"
                   required
                 >
-                  <option value="house">House</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="condo">Condo</option>
+                  <option value="House">House</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Condo">Condo</option>
                 </select>
               </div>
 
@@ -181,12 +216,12 @@ export default function ListingPage() {
                   onChange={handleImageUpload}
                   className="file-input file-input-bordered w-full"
                 />
-                {formData.images.length > 0 && (
+                {formData.image_path.length > 0 && (
                   <div className="grid grid-cols-3 gap-4 mt-4">
-                    {formData.images.map((image, index) => (
+                    {formData.image_path.map((image, index) => (
                       <div key={index} className="relative">
                         <img
-                          src={URL.createObjectURL(image)}
+                          src={image}
                           alt={`Property image ${index + 1}`}
                           className="w-full h-24 object-cover rounded"
                         />
