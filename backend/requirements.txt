@@ -4,3 +4,12 @@ pydantic
 pydantic-settings
 python-decouple
 openai
+pandas
+langchain 
+langchain-openai 
+langchain-community
+pillow 
+imagehash 
+requests 
+duckduckgo-search
+google-api-python-client
