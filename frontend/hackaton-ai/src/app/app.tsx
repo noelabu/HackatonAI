@@ -26,9 +26,9 @@ export default function App() {
       area: 85,
       imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
       communityNotes: [
-        "This property is listed by a lister that is not verified.",
-        "Close to public transportation and shopping centers",
-        "Building has backup power generator"
+        "This property may not be genuine based on generic image of the listing.",
+        "The reviews about the property are quite generic and do not provide specific details about the property, which could be a potential red flag.",
+        "The overall trust score for this property listing is low."
       ]
     },
     {
