@@ -8,8 +8,9 @@ interface Property {
   location: string;
   bedrooms: number;
   bathrooms: number;
-  area: number;
-  imageUrl: string;
+  floorArea: number;
+  lotArea: number;
+  imageUrls: string[];
   communityNotes?: string[];
 }
 
@@ -23,12 +24,17 @@ export default function App() {
       location: "Manila, Philippines",
       bedrooms: 2,
       bathrooms: 2,
-      area: 85,
-      imageUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+      floorArea: 85,
+      lotArea: 100,
+      imageUrls: [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2"
+      ],
       communityNotes: [
-        "This property may not be genuine based on generic image of the listing.",
-        "The reviews about the property are quite generic and do not provide specific details about the property, which could be a potential red flag.",
-        "The overall trust score for this property listing is low."
+        "This property is listed by a broker that is ",
+        "Close to public transportation and shopping centers",
+        "Building has backup power generator"
       ]
     },
     {
@@ -38,8 +44,13 @@ export default function App() {
       location: "Cebu, Philippines",
       bedrooms: 4,
       bathrooms: 3,
-      area: 250,
-      imageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+      floorArea: 250,
+      lotArea: 500,
+      imageUrls: [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811"
+      ],
       communityNotes: [
         "Gated community with strict security measures",
         "Property has CCTV coverage and alarm system",
@@ -56,7 +67,6 @@ export default function App() {
   return (
     <div className="mockup-browser border bg-base-300" data-theme="light">
       <div className="mockup-browser-toolbar">
-        <div className="input">PropGuard</div>
       </div>
       <div className="px-4 py-8 bg-base-200">
         <div className="container mx-auto">
@@ -64,20 +74,47 @@ export default function App() {
             {filteredProperties.map((property) => (
               <div key={property.id} className="card lg:card-side bg-base-100 shadow-xl">
                 <figure className="lg:w-1/3">
-                  <img 
-                    src={property.imageUrl}
-                    alt={property.title}
-                    className="h-full w-full object-cover"
-                  />
+                  <div className="carousel w-full">
+                    {property.imageUrls.map((url, index) => (
+                      <div key={index} className="carousel-item w-full">
+                        <img 
+                          src={url}
+                          alt={`${property.title} - image ${index + 1}`}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </figure>
                 <div className="card-body lg:w-2/3">
                   <h2 className="card-title text-2xl">{property.title}</h2>
                   <p className="text-2xl font-bold">${property.price.toLocaleString()}</p>
                   <p className="text-lg">{property.location}</p>
                   <div className="flex gap-6 text-base">
-                    <span>{property.bedrooms} beds</span>
-                    <span>{property.bathrooms} baths</span>
-                    <span>{property.area} m²</span>
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z"/>
+                      </svg>
+                      {property.bedrooms} beds
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M5 2a2 2 0 00-2 2v14l4-4h9a2 2 0 002-2V4a2 2 0 00-2-2H5zm10 10H5V4h10v8z"/>
+                      </svg>
+                      {property.bathrooms} baths
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 0h8v12H6V4z"/>
+                      </svg>
+                      {property.floorArea} m² floor
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z"/>
+                      </svg>
+                      {property.lotArea} m² lot
+                    </span>
                   </div>
                   <div className="bg-base-200 p-4 rounded-lg mt-2">
                     <h3 className="font-semibold mb-2">PropGuard says:</h3>

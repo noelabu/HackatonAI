@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "OpenAI App",
-  description: "App to use the OpenAI API",
+  title: "PropGuard",
+  description: "Where Property Meets Safety",
 };
 
 export default function RootLayout({
