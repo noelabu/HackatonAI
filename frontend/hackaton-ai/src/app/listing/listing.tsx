@@ -39,7 +39,7 @@ export default function ListingPage() {
     e.preventDefault();
     try {
       console.log(formData);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`+'/add_property', formData);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}`+'/add_property_listing', formData);
       console.log('Form submitted successfully:', response.data);
       // if (response.status == 201){
       //   router.push('/');

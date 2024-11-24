@@ -69,7 +69,9 @@ class RealEstateSafetyAgent:
         self.agent_executor = AgentExecutor(
             agent=self.agent,
             tools=self.tools,
-            verbose=True
+            verbose=True,
+            handle_parsing_errors=True,
+            max_iterations=3
         )
         
         # Update scorer initialization with error handling
@@ -245,15 +247,15 @@ class RealEstateSafetyAgent:
             4. Verify lister information
             5. Return all collected data
             
-            Return your response in the following JSON format:
-            {
+            Return your response in the following JSON format:s
+            {{
                 "images": [...],
                 "reviews": [...],
                 "lister_name": "...",
                 "search_results": "...",
                 "price_variations": [...],
                 "detail_mismatches": [...]
-            }
+            }}
             
             {agent_scratchpad}
             """

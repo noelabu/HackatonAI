@@ -1,5 +1,3 @@
-# OpenAI APP API
-
 ## Getting started with Development
 
 ### Setting up Virtual Environment

@@ -70,7 +70,6 @@ export default function App() {
                   <h2 className="card-title text-2xl">{property.property_name}</h2>
                   <p className="text-2xl font-bold">PHP {property.price.toLocaleString()}</p>
                   <p className="text-lg">{property.location}</p>
-                  <p className="text-sm">Listed by: {property.lister_name}</p>
                   <div className="flex gap-6 text-base">
                     <span className="flex items-center gap-1">
                       {property.bedrooms} beds

@@ -1,59 +1,9 @@
 listing_id,listing_name,property_name,location,lot_area,floor_area,bedrooms,bathrooms,property_type,price,image_path,response
-1,Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80,261,4,5,House,"17,000,000","[""Kamuning.jpg"", ""Kamuning1.jpg""]","Broker Profile: Jeffrey Lock
-Property Name: 4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY
-Location: Kamuning, Quezon City
-Lot Area: 80 sqm
-Floor Area: 261 sqm
-Price: PHP 17,000,000
-
-Property Details Validation:
-
-Using the 'Search' tool, I found that the property name ""4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY"" is a valid property listing. The property type is a 'House', which is consistent with the listing. The location ""Kamuning, Quezon City"" is a valid location. The lot area of 80 sqm and floor area of 121 sqm are reasonable for a 4-storey townhouse. The property has 4 bedrooms and 5 bathrooms, which is also reasonable for a 4-storey townhouse. The price of 17,000,000 
-PHP is within the average price range for similar properties in the same location.
-
-Image Validation Results:
-
-Using the 'ValidateImages' tool, the image provided in the listing was found to be authentic and matches the property description.
-
-Sentiment Analysis from Reviews:
-
-Using the 'AnalyzeSentiment' tool, the sentiment from the reviews is generally positive. The reviewers praised the professionalism and responsiveness of the lister, although one reviewer mentioned that some negotiations took longer than expected.
-
-Lister Verification:
-
-Using the 'VerifyLister' tool, the lister ""Jeffrey Lock"" was verified as a legitimate real estate lister.
-
-Overall Trust Score:87/100,
+1,Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80,261,4,5,House,"17,000,000","[""images/Kamuning.jpg"", ""images/Kamuning1.jpg""]","Overall Trust Score:87/100,
 Request additional high-quality property images and verify their authenticity,
 Cross-reference listing details across multiple platforms to verify consistency,
 Perform standard verification procedures before proceeding"
-2,Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400,882,7,7,House,"100,000,000","[""Hillsborough.jpg"", ""Hillsborough1.jpg""]","Broker Profile: Top Tier
-Property Name: FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntinlupa
-Location: Hillsborough Alabang, Cupang, Muntinlupa
-Lot Area: 400 sqm
-Floor Area: 882 sqm
-Price: PHP 100,000,000
-Image Path: /images/hillsborough.jpg
-Link to Listing: View Property
-
-Property Details Validation:
-
-Using the 'Search' tool, I found that the property name ""FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa"" is a valid property listing. The property type is a 'House', which is consistent with the listing. The location ""Kamuning, Quezon City"" is a valid location. The lot area of 80 sqm and floor area of 121 sqm are reasonable for a 3-storey townhouse. The property has 7 bedrooms and 7 bathrooms, which is also reasonable for a 3-storey townhouse. The price of 100,000,000 
-PHP is within the average price range for similar properties in the same location.
-
-Image Validation Results:
-
-Using the 'ValidateImages' tool, the image provided in the listing was found to be authentic and matches the property description.
-
-Sentiment Analysis from Reviews:
-
-Using the 'AnalyzeSentiment' tool, the sentiment from the reviews is generally positive. The reviewers praised the professionalism and responsiveness of the lister, although one reviewer mentioned that some negotiations took longer than expected.
-
-Lister Verification:
-
-Using the 'VerifyLister' tool, the lister ""Top Tier"" was verified as a legitimate real estate lister.
-
-Overall Trust Score:85.6/100,
+2,Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400,882,7,7,House,"100,000,000","[""images/Hillsborough.jpg"", ""images/Hillsborough1.jpg""]","Overall Trust Score:85.6/100,
 Request additional high-quality property images and verify their authenticity,
 Cross-reference listing details across multiple platforms to verify consistency,
 Perform standard verification procedures before proceeding"
