@@ -23,7 +23,6 @@ PropGuard empowers users to confidently engage in property transactions without 
 This project was created as part of the **Hack the Future: Technology for a Better World** hackathon under the **Noneaway Challenge**, which focuses on developing solutions to make the real estate industry in the Philippines a safer, more transparent environment. PropGuard is a prime example of how technology can address critical issues in the sector, helping to combat real estate fraud and enhance trust in property transactions. By leveraging AI-powered verification tools, PropGuard aims to create a more secure and reliable marketplace for both buyers and sellers in the Philippines.
 
 ### Getting Started
-```
 ### Pre-requisites
 Before running the application, make sure you have the following installed:
 
