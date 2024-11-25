@@ -2,7 +2,6 @@ from typing import List, Dict
 from datetime import datetime
 import openai
 import os
-import requests
 
 class CrossPlatformValidator:
     def __init__(self, openai_api_key: str = None):

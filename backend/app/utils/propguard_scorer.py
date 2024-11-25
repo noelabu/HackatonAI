@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import List, Dict, Optional
+from typing import List, Dict
 from enum import Enum
 
 class ListingStatus(Enum):

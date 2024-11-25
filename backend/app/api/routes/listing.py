@@ -10,10 +10,7 @@ from app.utils.propguard_scorer import QualitativeTrustScorer
 from app.utils.agent_validator import AgentValidator
 from app.utils.crossplatform_validator import CrossPlatformValidator
 from app.utils.image_validator import ImageValidator
-from app.utils.review_validator import ReviewValidator
 from decouple import config
-
-from langchain_openai import ChatOpenAI
 
 router = APIRouter()
 
