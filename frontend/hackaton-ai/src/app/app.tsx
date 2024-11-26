@@ -19,7 +19,7 @@ interface Property {
 
 const fetchProperties = async (): Promise<Property[]> => {
   try {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/list_property`);
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/property_listing`);
     return response.data;
   } catch (error) {
     console.error("Error fetching properties:", error);

@@ -56,6 +56,8 @@ Before running the application, make sure you have the following installed:
 5. Set up your environment variables. Create a `.env` file in the directory, copy the example in `.env.example` and edit the necessary values.
     ```bash
     OPENAI_API_KEY='your_secret_key'
+    GOOGLE_CSE_ID='your_google_search_key'
+    XAI_API_KEY='your_grok_api_key'
     ```
 6. Run the FastAPI server:
     ```bash

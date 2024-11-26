@@ -1,0 +1,14 @@
+listing_id,listing_name,property_name,location,lot_area,floor_area,bedrooms,bathrooms,property_type,price,image_path,response
+1,Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80,261,4,5,House,"17,000,000","[""/images/Kamuning.jpg"", ""/images/Kamuning1.jpg""]","Overall Trust Score:87/100,
+Request additional high-quality property images and verify their authenticity,
+Cross-reference listing details across multiple platforms to verify consistency,
+Perform standard verification procedures before proceeding"
+2,Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400,882,7,7,House,"100,000,000","[""/images/Hillsborough.jpg"", ""/images/Hillsborough1.jpg""]","Overall Trust Score:85.6/100,
+Request additional high-quality property images and verify their authenticity,
+Cross-reference listing details across multiple platforms to verify consistency,
+Perform standard verification procedures before proceeding"
+3,LORELIE VILLAPANA,"3 Storey, 4 BR House in Makati","8912 P. Victor St. corner Lagallanes St. Guadalupe Nuevo, Makati City Guadalupe Nuevo, Makati",39,137,4,3,house,16500000.0,"[""/images/a570691751d631.png""]","Overall Trust Score: 0/100,
+CRITICAL: Insufficient or suspicious property images. Request complete image set and verify authenticity,
+URGENT: Agent verification failed. Verify credentials and licensing information immediately,
+CRITICAL: Major inconsistencies found across platforms. Detailed cross-reference check required,
+Perform standard verification procedures before proceeding"

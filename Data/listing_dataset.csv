@@ -1,3 +1,3 @@
-listing_id,lister_name,property_name,location,lot_area,floor_area,bedrooms,bathrooms,property_type,price,image_path,0,1
+listing_id,listing_name,property_name,location,lot_area,floor_area,bedrooms,bathrooms,property_type,price,image_path,0,1
 1,Jeffrey Lock,4 STOREY TOWNHOUSE FOR SALE IN KAMUNING QUEZON CITY,"Kamuning, Quezon City",80.0,261.0,4.0,5.0,House,17000000.0,"[""Kamuning.jpg"""," ""Kamuning1.jpg""]",,
 2,Top Tier,"FOR SALE - 3 Storey Brand New House, Hillsborough Alabang, Muntilupa","Hillsborough Alabang Cupang, Muntinlupa",400.0,882.0,7.0,7.0,House,100000000.0,"[""Hillsborough.jpg"""," ""Hillsborough1.jpg""]",,

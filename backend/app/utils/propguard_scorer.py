@@ -46,10 +46,10 @@ class QualitativeTrustScorer:
     def evaluate_listing(self, image_validation: str, agent_verification: Dict, 
                         cross_platform: str) -> Dict:
         """Main entry point for listing evaluation"""
-        image_metrics = image_validation
+        image_metrics = self._convert_to_image_metrics(image_validation)
         agent_metrics = self._convert_to_agent_metrics(agent_verification)
-        platform_metrics = cross_platform
-        
+        platform_metrics = self._convert_to_platform_metrics(cross_platform)
+
         component_scores = {
             'image_validation': self._calculate_image_score(image_metrics),
             'agent_verification': self._calculate_agent_score(agent_metrics),
