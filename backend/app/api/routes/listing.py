@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from fastapi import HTTPException
 from pydantic import BaseModel
 
 import pandas as pd
@@ -87,18 +88,18 @@ async def add_property_listing(property_form_values: PropertyValues):
         return scorer_data
 
     except json.JSONDecodeError as e:
-        return {
-            "error": "Error transforming agent output",
-            "details": str(e)
-        }
+        raise HTTPException(status_code=404, detail="Error transforming agent output: " + str(e))
 
 @router.get(
     "/property_listing",
     status_code=200
 )
 async def list_all_listing_property():
-    df = pd.read_csv('../data/listing.csv')
-    df['image_path'] = df['image_path'].apply(ast.literal_eval)
-    df['response'] = df['response'].apply(lambda x: x.split(","))
-    data_as_dicts = df.to_dict(orient='records')
-    return data_as_dicts
+    try:
+        df = pd.read_csv('../data/listing.csv')
+        df['image_path'] = df['image_path'].apply(ast.literal_eval)
+        df['response'] = df['response'].apply(lambda x: x.split(","))
+        data_as_dicts = df.to_dict(orient='records')
+        return data_as_dicts
+    except Exception as e:
+        raise HTTPException(status_code=404, detail="Error listing all properties from database: " + str(e))

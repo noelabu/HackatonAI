@@ -13,3 +13,4 @@ imagehash
 requests 
 duckduckgo-search
 google-api-python-client
+python-multipart

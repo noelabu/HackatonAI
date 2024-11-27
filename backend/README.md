@@ -35,6 +35,8 @@ To use the OpenAI API, you need to create a OpenAI Developer account and create 
 
 ```
 OPENAI_API_KEY='your_secret_key'
+GOOGLE_CSE_ID='your_google_search_key'
+XAI_API_KEY='your_grok_api_key'
 ```
 ### Running from a virtual environment
 
@@ -43,6 +45,3 @@ OPENAI_API_KEY='your_secret_key'
 2. To start the application, run uvicorn in the virtual environment with `uvicorn app.main:app --host 127.0.0.1 --port 8000`.
 
 3. Access the API at http://localhost:8000/docs
-
-### Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests.
